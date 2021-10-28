@@ -103,7 +103,6 @@ export default withSession(async (req, res) => {
     // 9) Send back success (200) response
     res.status(200).send('Checkout Success');
   } catch (error) {
-    console.error(error);
     res.status(500).send('Error Charge Processing.');
   }
 });

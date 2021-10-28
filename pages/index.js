@@ -1,10 +1,10 @@
-import React, { createContext } from 'react';
-import ProductList from '../components/Index/ProductList';
-import { server } from '../lib/server';
-import Meta from '../components/Meta';
+import React from 'react';
 import axios from 'axios';
-import ProductPagination from '../components/Index/ProductPagination';
+import { server } from '../lib/server';
 import withSession from '../lib/section';
+import Meta from '../components/Meta';
+import ProductList from '../components/Index/ProductList';
+import ProductPagination from '../components/Index/ProductPagination';
 
 // export const userContext = createContext();
 
@@ -25,6 +25,6 @@ export const getServerSideProps = withSession(async (ctx) => {
   const res = await axios.get(`${server}/api/product`, payload);
   const data = JSON.parse(JSON.stringify(res.data));
   return {
-    props: { data, user: ctx.req.session.get('user') },
+    props: { data },
   };
 });

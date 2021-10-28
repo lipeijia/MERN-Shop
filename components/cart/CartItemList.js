@@ -1,8 +1,6 @@
 import router, { useRouter } from 'next/router';
 import Button from './Button';
 import CartItem from './CartItem';
-import SpinIcon from '../../components/SpinIcon';
-import { Message } from 'postcss';
 
 export default function CartItemList({
   cart,

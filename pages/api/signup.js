@@ -1,7 +1,6 @@
 import { connectToDatabase } from '../../lib/mongodb';
 import { ObjectID } from 'mongodb';
 import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
 import isEmail from 'validator/lib/isEmail';
 import isLength from 'validator/lib/isLength';
 import withSession from '../../lib/section';

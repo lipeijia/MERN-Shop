@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Header from './Header';
 import Meta from '../Meta';
-import withSession from '../../lib/section';
 
-export default function Layout({ children, user }) {
+export default function Layout({ children }) {
   return (
     <>
       <Meta />

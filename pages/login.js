@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import FormInput from '../components/form/FormInput';
-import FormButton from '../components/form/FormButton';
-import { HiOutlineMail } from 'react-icons/hi';
-import { RiLockPasswordLine } from 'react-icons/ri';
-import Loading from '../components/Loading';
-import { catchErrors } from '../helper/catchErrors';
-import Message from '../components/Message';
-import axios from 'axios';
-import { server } from '../lib/server';
-import { handleLogin } from '../helper/auth';
 import useUser from '../lib/useUser';
 import fetchJson from '../lib/fetchJson';
+import { catchErrors } from '../helper/catchErrors';
+import FormInput from '../components/form/FormInput';
+import FormButton from '../components/form/FormButton';
+import Message from '../components/Message';
+import Loading from '../components/Loading';
+import { HiOutlineMail } from 'react-icons/hi';
+import { RiLockPasswordLine } from 'react-icons/ri';
 
 export default function login() {
   const { mutateUser } = useUser({

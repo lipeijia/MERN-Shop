@@ -7,6 +7,7 @@ module.exports = {
         'max-height': 'max-height',
         overflow: 'overflow',
         transform: 'translateY',
+        height: 'height',
       },
       transitionTimingFunction: {
         'in-expo': 'cubic-bezier(0.895, 0.03, 0.685, 0.22)',

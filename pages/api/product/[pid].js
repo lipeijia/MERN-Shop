@@ -44,7 +44,6 @@ async function handlePostRequest(req, res) {
 
 async function handleDeleteRequest(req, res) {
   const { id } = req.body;
-  console.log(id);
   try {
     const { db } = await connectToDatabase();
     await db.collection('products').deleteOne({ _id: ObjectID(id) });

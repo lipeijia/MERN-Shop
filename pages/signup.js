@@ -10,10 +10,7 @@ import { catchErrors } from '../helper/catchErrors';
 import Message from '../components/Message';
 import { server } from '../lib/server';
 import axios from 'axios';
-import { handleLogin } from '../helper/auth';
 import Router from 'next/router';
-import useUser from '../lib/useUser';
-import fetchJson from '../lib/fetchJson';
 
 export default function signup() {
   const INITIAL_USER = {
@@ -54,7 +51,7 @@ export default function signup() {
       // make request to sing up user
       const url = `${server}/api/signup`;
       const payload = { ...user };
-      const res = await axios.post(url, payload);
+      await axios.post(url, payload);
       Router.push('/account');
     } catch (err) {
       catchErrors(err, setError);

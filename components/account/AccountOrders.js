@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Order from './Order';
-import ProductOrder from '../account/ProductOrder';
 
 export default function AccountOrders({ data }) {
   return (

@@ -1,5 +1,4 @@
 import React from 'react';
-import useSWR from 'swr';
 import Meta from '../components/Meta';
 import withSession from '../lib/section';
 import { server } from '../lib/server';

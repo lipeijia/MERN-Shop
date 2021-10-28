@@ -14,7 +14,7 @@ export default function Meta({ title, keywords, description }) {
 }
 
 Meta.defaultProps = {
-  title: 'MERN STACK SHOP',
+  title: 'MERN SHOP',
   keywords: 'web development, next.js, MERN',
   description: 'practicing projects',
 };

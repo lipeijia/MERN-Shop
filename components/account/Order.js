@@ -21,7 +21,7 @@ export default function Order({ total, purchaseTime, products }) {
       </div>
       <div
         className={`transition-all transform duration-500 ${
-          opened ? 'max-h-full overflow-visible' : 'max-h-0 overflow-hidden'
+          opened ? 'max-h-60 overflow-visible' : 'max-h-0 overflow-hidden'
         }`}
       >
         <div

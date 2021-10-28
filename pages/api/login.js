@@ -24,7 +24,7 @@ export default withSession(async (req, res) => {
         role: user.role,
         createAt: user.createAt,
       };
-      console.log('login', loginUser);
+
       req.session.set('user', loginUser);
       await req.session.save();
       // 5) send that token to the client
@@ -33,7 +33,6 @@ export default withSession(async (req, res) => {
       res.status(401).send('Password is incorrect');
     }
   } catch (error) {
-    console.error(error);
     res.status(500).send('Error logging in user');
   }
 });

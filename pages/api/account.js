@@ -4,8 +4,6 @@ import withSession from '../../lib/section';
 export default withSession(async (req, res) => {
   const user = req.session.get('user');
   if (user) {
-    // in a real world application you might read the user id from the session and then do a database request
-    // to get more information on the user if needed
     try {
       const { db } = await connectToDatabase();
       const hasUser = await db

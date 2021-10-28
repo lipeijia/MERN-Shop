@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaRegUser } from 'react-icons/fa';
+import { formateDate } from '../../helper/formateDate';
 
 export default function AccountHeader({ name, email, role, createAt }) {
   return (
@@ -9,7 +10,9 @@ export default function AccountHeader({ name, email, role, createAt }) {
       </div>
       <h3 className='text-gray-100 font-serif font-bold text-2xl'>{name}</h3>
       <p className='text-gray-300 text-sm'>{email}</p>
-      <p className='text-gray-300 text-sm'>{`Joined ${createAt}`}</p>
+      <p className='text-gray-300 text-sm'>{`Joined ${formateDate(
+        createAt
+      )}`}</p>
       <p className='text-gray-300 border-2 border-gray-600 inline-block px-3 py-1 mt-2 text-xs'>
         {role}
       </p>

@@ -1,9 +1,5 @@
 import React from 'react';
 import Modal from '../Modals/Modal';
-// import axios from 'axios';
-// import { server } from '../../lib/server';
-// import { useRouter } from 'next/router';
-// import Message from '../Message';
 
 function ProductAttributes({
   description,

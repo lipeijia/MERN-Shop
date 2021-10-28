@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { server } from '../lib/server';
 import { randomSku } from '../helper/randomSku';
@@ -20,6 +20,7 @@ export default function create() {
   const [loading, setLoading] = useState(false);
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [error, setError] = useState('');
+  const fileRef = useRef();
 
   // disabled button when inputs aer empty
   useEffect(() => {
@@ -63,15 +64,10 @@ export default function create() {
       const url = `${server}/api/product/[pid]`;
       const sku = randomSku();
       const payload = { name, price, description, mediaUrl, sku };
-      await axios
-        .post(url, payload)
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          catchErrors(err, setError);
-        });
+      await axios.post(url, payload);
       setProduct(INITIAL_PRODUCT);
+      setMediaPreview('');
+      fileRef.current.value = '';
       showMessage(true);
     } catch (err) {
       catchErrors(err, setError);
@@ -138,6 +134,7 @@ export default function create() {
               className='form-input'
               accept='image/*'
               onChange={handleChange}
+              ref={fileRef}
               className='px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full'
               required
             />

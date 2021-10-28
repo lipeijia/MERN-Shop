@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import useSWR from 'swr';
+import axios from 'axios';
+import fetchJson from '../lib/fetchJson';
+import { server } from '../lib/server';
+import { catchErrors } from '../helper/catchErrors';
 import CartItemList from '../components/cart/CartItemList';
 import CartSummary from '../components/cart/CartSummary';
-import useUser from '../lib/useUser';
-import axios from 'axios';
-import { server } from '../lib/server';
-import useSWR, { trigger } from 'swr';
 import Loading from '../components/Loading';
-import fetchJson from '../lib/fetchJson';
 import SpinIcon from '../components/SpinIcon';
-import { catchErrors } from '../helper/catchErrors';
 
 export default function cart() {
   const { data, mutate: mutateCart } = useSWR('/api/cart');
@@ -58,7 +57,6 @@ export default function cart() {
       showMessage(true);
     } catch (err) {
       catchErrors(err, setError);
-      console.log(err);
     } finally {
       setLoading(false);
     }

@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { server } from '../../../lib/server';
+import useUser from '../../../lib/useUser';
 import ProductDetail from '../../../components/product/ProductDetail';
 import ProductAttributes from '../../../components/product/ProductAttributes';
 import Meta from '../../../components/Meta';
-import Link from 'next/link';
-import useUser from '../../../lib/useUser';
 import Loading from '../../../components/Loading';
 import Message from '../../../components/Message';
-import axios from 'axios';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 
 export default function Pid({ product }) {
   const { user } = useUser();
@@ -27,7 +28,7 @@ export default function Pid({ product }) {
       .then(() => showMessage(true))
       .catch((err) => setError(err));
     setModal(false);
-    // router.push('/');
+    router.push('/');
   }
   return (
     <>
@@ -39,8 +40,12 @@ export default function Pid({ product }) {
           showMessage={showMessage}
           content='Deleting Product Successfully.'
         />
-        <Link href='/'>
-          <a>View All Products</a>
+        <Link href='/' className='inline-flex'>
+          <a className='flex justify-start items-center my-4 p-3 text-gray-500 border-2 border-transparent rounded-lg hover:border-gray-400 transition'>
+            {' '}
+            <IoMdArrowRoundBack />
+            View All Products
+          </a>
         </Link>
         <ProductDetail {...product} isLoggedIn={user?.isLoggedIn} />
         <ProductAttributes

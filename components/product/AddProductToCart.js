@@ -25,8 +25,7 @@ export default function AddProductToCart({ isLoggedIn, _id }) {
       setIsLoading(true);
       const url = `${server}/api/cart`;
       const payload = { _id, quantity: +quantity };
-      const res = await axios.put(url, payload);
-      console.log(res);
+      await axios.put(url, payload);
     } catch (error) {
       catchErrors(error, window.alert);
     } finally {
