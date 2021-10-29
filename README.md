@@ -18,24 +18,24 @@ Login/sign-up via email. Admin user could add/delete products.
 ### Sitemap
 
 - Before sign up or login:
-
+```
 |--Home
 |--Cart
 |--Sign-up
 |--login
-
+```
 - After sign up or login:
-
+```
 |--Home
 |--Cart
 |--Create Product (admin)
 |--Account
 |--logout
-
-![](./public/assets/home.png)
-![](./public/assets/product.png)
-![](./public/assets/cart.png)
-![](./public/assets/stripe.png)
-![](./public/assets/create.png)
-![](./public/assets/account.png)
-![](./public/assets/signup.png)
+```
+![](./public/assects/home.png)
+![](./public/assects/product.png)
+![](./public/assects/cart.png)
+![](./public/assects/stripe.png)
+![](./public/assects/create.png)
+![](./public/assects/account.png)
+![](./public/assects/signup.png)
