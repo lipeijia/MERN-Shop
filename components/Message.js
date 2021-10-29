@@ -6,7 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 export default function Message({
   error = false,
   message = true,
-  showMessage = true,
+  showMessage,
   content = 'text',
 }) {
   let isError = Boolean(error);

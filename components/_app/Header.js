@@ -44,15 +44,22 @@ export default function Header() {
           name='Create Product'
           href='/create'
           active={isActive('/create')}
+          setMenuItem={setMenuItem}
         />
       )}
-      <NavItem name='Account' href='/account' active={isActive('/account')} />
+      <NavItem
+        name='Account'
+        href='/account'
+        active={isActive('/account')}
+        setMenuItem={setMenuItem}
+      />
       <a
         href='/api/logout'
         className='font-serif text-xl text-white border-b-4 border-transparent p-1 m-3'
         onClick={async (e) => {
           e.preventDefault();
           mutateUser(await fetchJson('/api/logout', { method: 'POST' }), false);
+          setMenuItem(false);
           router.push('/login');
         }}
       >
@@ -63,8 +70,18 @@ export default function Header() {
 
   const defaultHeader = (
     <>
-      <NavItem name='Sign Up' href='/signup' active={isActive('/signup')} />
-      <NavItem name='Log In' href='/login' active={isActive('/login')} />
+      <NavItem
+        name='Sign Up'
+        href='/signup'
+        active={isActive('/signup')}
+        setMenuItem={setMenuItem}
+      />
+      <NavItem
+        name='Log In'
+        href='/login'
+        active={isActive('/login')}
+        setMenuItem={setMenuItem}
+      />
     </>
   );
   let renderHeader = user?.isLoggedIn ? loginHeader : defaultHeader;
@@ -80,7 +97,7 @@ export default function Header() {
         {!menuItem ? <AiOutlineMenu /> : <VscChromeClose />}
       </button>
       <div className='flex justify-center items-center flex-col sm:flex-row'>
-        <NavItem name='MERN SHOP' href='/' />
+        <NavItem name='MERN SHOP' href='/' setMenuItem={setMenuItem} />
         <div
           className={`transition-all transform ${
             menuItem
@@ -88,7 +105,12 @@ export default function Header() {
               : 'max-h-0 overflow-hidden h-0'
           } flex flex-col sm:h-auto items-center sm:max-h-full sm:flex-row sm:pl-8`}
         >
-          <NavItem name='Cart' href='/cart' active={isActive('/cart')} />
+          <NavItem
+            name='Cart'
+            href='/cart'
+            active={isActive('/cart')}
+            setMenuItem={setMenuItem}
+          />
           {renderHeader}
         </div>
       </div>

@@ -15,7 +15,7 @@ export default function CartSummary({ cart = [], handleCheckout }) {
   }, [cart]);
 
   return (
-    <div className='rounded-sm shadow-sm bg-white mx-4 my-8 border-2 border-gray-200 p-4 flex justify-between items-center'>
+    <div className='rounded-sm shadow-sm bg-white mx-4 my-8 border-2 border-gray-200 p-2 sm:p-4 flex justify-between items-center'>
       <div className='flex'>
         <p>Sub Total</p>
         <p className='pl-4'>
@@ -41,7 +41,7 @@ export default function CartSummary({ cart = [], handleCheckout }) {
             isEmpty
               ? 'bg-gray-200 cursor-not-allowed'
               : 'bg-gray-600 hover:bg-gray-800 hover:shadow-sm '
-          } text-white  font-serif uppercase text-sm px-6 py-3 rounded shadow outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150`}
+          } text-white  font-serif uppercase text-sm px-3 sm:px-6 py-3 rounded shadow outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150`}
           type='button'
         >
           Checkout

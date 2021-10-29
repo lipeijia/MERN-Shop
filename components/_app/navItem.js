@@ -1,10 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function NavItem({ name = 'home', href = '/', active = false }) {
+export default function NavItem({
+  name = 'home',
+  href = '/',
+  active = false,
+  setMenuItem,
+}) {
   return (
     <Link href={href}>
       <a
+        onClick={() => setMenuItem(false)}
         className={
           active
             ? 'font-serif border-b-4 border-white border-opacity-50 p-1 m-3 text-xl text-white duration-500'

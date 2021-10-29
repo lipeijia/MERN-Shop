@@ -56,7 +56,7 @@ export default function AddProductToCart({ isLoggedIn, _id }) {
               </button>
             ) : isSuccess ? (
               <button
-                className='px-4 py-4 pt-3 pb-3 text-white focus:outline-none backgroundColor: bg-blue-600 cursor-pointer'
+                className='inline-flex whitespace-nowrap px-4 py-4 pt-3 pb-3 text-white focus:outline-none backgroundColor: bg-blue-600 cursor-pointer'
                 disabled
                 type='button'
                 onClick={handleAddProduct}
@@ -65,7 +65,7 @@ export default function AddProductToCart({ isLoggedIn, _id }) {
               </button>
             ) : (
               <button
-                className='px-4 py-4 pt-3 pb-3 text-white focus:outline-none backgroundColor: bg-gray-800 cursor-pointer'
+                className=' px-4 py-4 pt-3 pb-3 text-white focus:outline-none backgroundColor: bg-gray-800 cursor-pointer'
                 type='button'
                 onClick={handleAddProduct}
               >

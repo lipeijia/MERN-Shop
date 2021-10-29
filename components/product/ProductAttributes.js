@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Modal from '../Modals/Modal';
 
 function ProductAttributes({
   description,
   isLoggedIn,
-  setModal,
-  modal,
+  // setModal,
+  // modal,
   handleDelete,
 }) {
+  const [modal, setModal] = useState(false);
+
   return (
     <>
       <hr className=' mt-10 mb-5' />

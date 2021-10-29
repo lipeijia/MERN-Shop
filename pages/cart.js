@@ -63,8 +63,8 @@ export default function cart() {
   }
 
   return (
-    <div className='max-w-screen-md mx-auto mt-8 mb-32'>
-      <h2 className='text-3xl lg:text-4xl text-center font-serif'>Carts</h2>
+    <div className='px-4 py-4 lg:p-0 max-w-screen-sm mx-auto mt-8'>
+      <h2 className='text-3xl lg:text-4xl text-center font-serif'>Cart</h2>
       <div className='border-4 border-gray-800 mt-4 rounded-md'>
         <CartItemList
           handleRemoveFromCart={handleRemoveFromCart}

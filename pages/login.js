@@ -84,9 +84,9 @@ export default function login() {
           </div>
         </div>
       </form>
-      <p className='text-center'>
+      <p className='text-center mt-4'>
         New user?
-        <Link href='/signUp'>
+        <Link href='/signup'>
           <a className='text-blue-400 pl-4'>Sign up here</a>
         </Link>
       </p>

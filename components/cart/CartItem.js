@@ -11,7 +11,7 @@ export default function CartItem({
 }) {
   return (
     <div className='border-b-2 flex bg-white box-border mx-4 pt-4 pb-4'>
-      <img src={mediaUrl} alt={name} width={150} height={150} />
+      <img src={mediaUrl} alt={name} width='150px' height='150px' />
       <div className='flex-grow pl-4'>
         <h2 className='text-2xl mt-2'>
           <Link href={`product/${_id}`}>

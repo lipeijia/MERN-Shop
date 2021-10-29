@@ -6,8 +6,6 @@ import Meta from '../components/Meta';
 import ProductList from '../components/Index/ProductList';
 import ProductPagination from '../components/Index/ProductPagination';
 
-// export const userContext = createContext();
-
 export default function Home({ data }) {
   return (
     <>

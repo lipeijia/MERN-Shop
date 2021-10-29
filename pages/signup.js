@@ -100,7 +100,7 @@ export default function signup() {
           </div>
         </div>
       </form>
-      <p className='text-center'>
+      <p className='text-center mt-4'>
         Have an account?
         <Link href='/login'>
           <a className='text-blue-400 pl-4'>Log in now</a>
